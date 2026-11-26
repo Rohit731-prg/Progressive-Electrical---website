@@ -6,6 +6,7 @@ import logo from "../assets/Progressive-Electrical-Logo.png";
 const navLinks = [
   { name: "Home", link: "/" },
   { name: "Services", link: "/services" },
+  { name: "Projects", link: "/projects" },
   { name: "About Us", link: "/about" },
   { name: "Contact", link: "/contact" },
 ];
@@ -211,7 +212,7 @@ function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="fixed inset-0 z-[60] lg:hidden">
+        <div className="fixed inset-0 z-60 lg:hidden">
           <div
             ref={backdropRef}
             className="absolute inset-0 bg-slate-950/65 backdrop-blur-sm"
@@ -287,7 +288,7 @@ function Navbar() {
               </ul>
             </nav>
 
-            <div className="mt-auto rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+            <div className="mt-auto rounded-2xl border border-white/10 bg-white/4 p-5">
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                 Licensed electrical contractor
               </p>

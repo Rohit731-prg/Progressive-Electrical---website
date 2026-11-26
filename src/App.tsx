@@ -6,6 +6,7 @@ import Error from "./Components/Error";
 import Footer from "./Components/Footer";
 import AboutUs from "./Components/AboutUs";
 import Services from "./Components/Servise";
+import Projects from "./Components/Projects";
 // import Services from "./Components/Services";
 // import Projects from "./Components/Projects";
 // import About from "./Components/About";
@@ -29,7 +30,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          {/* <Route path="/projects" element={<Projects />} /> */}
+          <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="*" element={<Error />} />

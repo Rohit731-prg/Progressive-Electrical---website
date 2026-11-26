@@ -13,8 +13,8 @@ function ContactUs() {
   const [submitted, setSubmitted] = useState(false);
 
   // Replace with your client's actual phone & WhatsApp number (with country code 91, no +)
-  const BUSINESS_PHONE = "+919876543210";
-  const WHATSAPP_NUMBER = "919876543210";
+  const BUSINESS_PHONE = "+919874149838";
+  const WHATSAPP_NUMBER = "919874149838";
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -72,7 +72,7 @@ function ContactUs() {
                       href={`tel:${BUSINESS_PHONE}`}
                       className="mt-0.5 block text-base font-semibold text-white hover:text-amber-400"
                     >
-                      +91 98765 43210
+                      +91 98741 49838
                     </a>
                   </div>
                 </div>

@@ -20,8 +20,7 @@ import gasCylinderImage from "../assets/GAS1.png";
 gsap.registerPlugin(ScrollTrigger);
 
 // ==========================================
-// 1. HERO IMAGES (Replace URLs with your 3 local asset imports)
-// Example: import hero1 from "../assets/hero1.jpg";
+// 1. HERO IMAGES
 // ==========================================
 const HERO_IMAGES = [
   {
@@ -43,10 +42,10 @@ const HERO_IMAGES = [
 // Example: import tataLogo from "../assets/tata-solar.png";
 // ==========================================
 const SOLAR_BRANDS = [
-  { name: "TATA Power Solar", logo: null },
-  { name: "Waaree", logo: null },
-  { name: "Adani Solar", logo: null },
-  { name: "Oswal", logo: null },
+  { name: "TATA Power Solar", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUlbKzRzIUI4KKcrp6AkfENkIIQaCUd49KG_mHs_xqQyjLvamAwaA5JkI&s=10" },
+  { name: "Waaree", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7C8wqEvC3FCx0Pb6EVCqKXthWL9SC6bAH2ov1A3qjYtevjijPIouOp_Ep&s=10" },
+  { name: "Adani Solar", logo: "https://www.adanisolar.com/-/media/Project/AdaniSolar/Common/Adani-Solar-library" },
+  { name: "Oswal", logo: "https://oswalsolar.com/wp-content/uploads/2024/08/WEBSITE-LOGO.png" },
 ];
 
 // ==========================================
@@ -64,14 +63,14 @@ const COMPANY_FACTS = [
     label: "HT/LT, Transformer & Wiring Sites Completed",
   },
   {
-    id: 3,
-    value: "40+",
-    label: "Domestic & Commercial Solar Installations",
-  },
-  {
     id: 4,
     value: "3 Offices",
     label: "Nimta, Ghola Check Post & Madhyamgram",
+  },
+  {
+    id: 5,
+    value: "600+ Customer",
+    label: "Provide 24 solar panel and Lt service upto 600 hundred",
   },
 ];
 
@@ -129,58 +128,21 @@ function Home() {
     return () => context.revert();
   }, []);
 
-  // const coreServices = [
-  //   {
-  //     num: "01",
-  //     title: "New Transformer Installation",
-  //     desc: "Plinth & pole-mounted transformer erection, double earthing, fencing, and WBSEDCL testing clearance.",
-  //   },
-  //   {
-  //     num: "02",
-  //     title: "Transformer Repairing",
-  //     desc: "HV/LV coil rewinding, oil filtration, BDV testing, bushing replacement, and breakdown restoration.",
-  //   },
-  //   {
-  //     num: "03",
-  //     title: "LT Bulk & HT Bulk Connections",
-  //     desc: "High-capacity load sanctions, metering cubicles, VCB/ACB panels, and industrial substation setup.",
-  //   },
-  //   {
-  //     num: "04",
-  //     title: "11 KV & 33 KV O.H & U.G Line Maintenance",
-  //     desc: "Overhead pole/conductor work and underground XLPE cable laying, jointing, and fault maintenance.",
-  //   },
-  //   {
-  //     num: "05",
-  //     title: "Multistoried Building & Industrial Wiring",
-  //     desc: "Rising mains, busducts, floor DBs, machine power wiring, and lightning protection systems.",
-  //   },
-  //   {
-  //     num: "06",
-  //     title: "Solar Panel Installation (EPC)",
-  //     desc: "Domestic, commercial, and industrial solar plants with net-metering using TATA, Waaree, Adani & Oswal.",
-  //   },
-  // ];
+  const trackRef = useRef<HTMLDivElement>(null);
+  const tweenRef = useRef<ReturnType<typeof gsap.to> | null>(null);
 
-  // const offices = [
-  //   {
-  //     type: "Head Office",
-  //     location: "Nimta, Kolkata",
-  //     address: "112/1, East Alipur Talbagan 1st Lane, PO-Nimta, Kol-700049",
-  //   },
-  //   {
-  //     type: "Branch Office I",
-  //     location: "Ghola Check Post",
-  //     address:
-  //       "Sodepur Barasat Road, C-Block (East), Ghola Check Post, Beside Axis Bank, Kol-700110",
-  //   },
-  //   {
-  //     type: "Branch Office II",
-  //     location: "Madhyamgram",
-  //     address:
-  //       "137 Sodepur Road, Basunagar, Beside HDFC Bank, Madhyamgram, Kol-700129",
-  //   },
-  // ];
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      tweenRef.current = gsap.to(trackRef.current, {
+        xPercent: -50,
+        duration: 16,
+        ease: "none",
+        repeat: -1,
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div ref={pageRef} className="bg-stone-50 text-slate-900">
@@ -196,10 +158,10 @@ function Home() {
             prefersReducedMotion
               ? false
               : {
-                  delay: 5000,
-                  disableOnInteraction: false,
-                  pauseOnMouseEnter: true,
-                }
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }
           }
           pagination={{ clickable: true }}
           loop
@@ -220,11 +182,11 @@ function Home() {
         </Swiper>
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/90 via-slate-950/75 to-slate-950/45"
+          className="pointer-events-none absolute inset-0 z-1 bg-linear-to-r from-slate-950/90 via-slate-950/75 to-slate-950/45"
         />
-        <div aria-hidden="true" className="hero-grid-pattern pointer-events-none absolute inset-0 z-[2] opacity-30" />
-        <div aria-hidden="true" className="hero-glow pointer-events-none absolute -top-40 right-[-8rem] z-[2] h-[28rem] w-[28rem] rounded-full bg-blue-500/20 blur-3xl" />
-        <div aria-hidden="true" className="pointer-events-none absolute bottom-[-18rem] left-[-10rem] z-[2] h-[30rem] w-[30rem] rounded-full bg-amber-500/10 blur-3xl" />
+        <div aria-hidden="true" className="hero-grid-pattern pointer-events-none absolute inset-0 z-2 opacity-30" />
+        <div aria-hidden="true" className="hero-glow pointer-events-none absolute -top-40 -right-32 z-2 h-112 w-md rounded-full bg-blue-500/20 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -bottom-72 -left-40 z-2 h-120 w-120 rounded-full bg-amber-500/10 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
             <div className="hero-copy lg:col-span-8">
@@ -269,13 +231,13 @@ function Home() {
               </div>
 
               {/* Registration & Proprietor Metadata */}
-              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-slate-800/90 pt-5 text-xs text-slate-400">
+              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-slate-800/90 pt-5 text-md text-slate-200">
                 <span>
-                  <strong className="text-slate-200">Proprietors:</strong>{" "}
+                  <strong className="text-amber-500">Proprietors:</strong>{" "}
                   Subhankar Barai &amp; Amit Singha
                 </span>
                 <span>
-                  <strong className="text-slate-200">GSTIN:</strong>{" "}
+                  <strong className="text-amber-500">GSTIN:</strong>{" "}
                   19BXFPB3340H1ZZ
                 </span>
               </div>
@@ -306,8 +268,11 @@ function Home() {
       {/* =========================================================
           SECTION 2: CORE ENGINEERING & SOLAR SERVICES
       ========================================================= */}
-      <section className="home-content mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div data-reveal className="flex flex-col justify-between gap-4 border-b border-slate-200 pb-6 sm:flex-row sm:items-end">
+      <section className="home-content mx-auto max-w-7xl overflow-x-clip px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div
+          data-reveal
+          className="flex flex-col justify-between gap-4 border-b border-slate-200 pb-6 sm:flex-row sm:items-end"
+        >
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-amber-700">
               Engineering Scope
@@ -325,73 +290,104 @@ function Home() {
           </button>
         </div>
 
-        <div data-reveal className="mt-10">
-          <Swiper
-            modules={[EffectCoverflow]}
-            effect="coverflow"
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 80,
-              modifier: 1,
-              slideShadows: false,
-            }}
-            slidesPerView={1.08}
-            centeredSlides
-            spaceBetween={18}
-            breakpoints={{
-              640: { slidesPerView: 1.15, spaceBetween: 24 },
-              1024: { slidesPerView: 1.22, spaceBetween: 30 },
-            }}
-            onSwiper={(swiper) => {
-              servicesSwiperRef.current = swiper;
-            }}
-            onSlideChange={(swiper) => setActiveServiceSlide(swiper.realIndex)}
-            loop
-            speed={prefersReducedMotion ? 0 : 550}
-            className="service-carousel"
-          >
-            {servicesList.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="service-slide-card relative flex min-h-[390px] items-end overflow-hidden rounded-3xl bg-slate-950 p-7 text-white sm:min-h-[440px] sm:p-10 lg:min-h-[480px] lg:p-14">
-                  <img
-                    src={item.image}
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute inset-0 h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/5" />
-                  <div className="relative z-10 max-w-2xl">
-                    <span className="inline-flex rounded-full border border-white/25 bg-slate-950/35 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-amber-300 backdrop-blur-sm">
-                      {item.badge} <span className="ml-2 text-white/60">/ {item.id}</span>
-                    </span>
-                    <h3 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-200 sm:text-base">
-                      {item.summary}
-                    </p>
-                    <button
-                      type="button"
-                      onClick={() => navigation("/services")}
-                      className="mt-6 rounded-full bg-amber-400 px-5 py-3 text-xs font-bold uppercase tracking-wider text-slate-950 transition hover:bg-amber-300"
+        <div data-reveal className="mt-10 overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-xs">
+          <div className="p-3 sm:p-5">
+            <Swiper
+              modules={[EffectCoverflow]}
+              effect="coverflow"
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 80,
+                modifier: 1,
+                slideShadows: false,
+              }}
+              slidesPerView={1.06}
+              centeredSlides
+              spaceBetween={18}
+              breakpoints={{
+                640: { slidesPerView: 1.14, spaceBetween: 24 },
+                1024: { slidesPerView: 1.2, spaceBetween: 28 },
+              }}
+              onSwiper={(swiper) => {
+                servicesSwiperRef.current = swiper;
+              }}
+              onSlideChange={(swiper) => setActiveServiceSlide(swiper.realIndex)}
+              loop
+              speed={prefersReducedMotion ? 0 : 550}
+              className="service-carousel !overflow-visible!"
+            >
+              {servicesList.map((item, idx) => {
+                const isCurrent = idx === activeServiceSlide;
+                return (
+                  <SwiperSlide key={item.id}>
+                    <div
+                      className={`service-slide-card relative flex min-h-97.5 items-end overflow-hidden rounded-3xl bg-slate-950 p-7 text-white transition-all duration-300 sm:min-h-110 sm:p-10 lg:min-h-120 lg:p-14 ${isCurrent
+                          ? "ring-1 ring-amber-400/40"
+                          : "opacity-85"
+                        }`}
                     >
-                      View Specifications <span aria-hidden="true">&rarr;</span>
-                    </button>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className="flex items-center justify-between border-t border-slate-100 px-5 py-4 sm:px-8">
-            <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
-              <span className="text-amber-700">
-                {String(activeServiceSlide + 1).padStart(2, "0")}
-              </span>
-              {" / "}
-              {String(servicesList.length).padStart(2, "0")} service capabilities
-            </p>
+                      <img
+                        src={item.image}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/75 to-slate-950/10" />
+                      <div className="relative z-10 max-w-2xl">
+                        <span className="inline-flex rounded-full border border-white/25 bg-slate-950/45 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-amber-300 backdrop-blur-sm">
+                          {item.badge}{" "}
+                          <span className="ml-2 text-white/65">/ {item.id}</span>
+                        </span>
+                        <h3 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+                          {item.title}
+                        </h3>
+                        <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-200 sm:text-base">
+                          {item.summary}
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => navigation("/services")}
+                          className="mt-6 rounded-full bg-amber-400 px-5 py-3 text-xs font-bold uppercase tracking-wider text-slate-950 transition hover:bg-amber-300"
+                        >
+                          View Specifications <span aria-hidden="true">&rarr;</span>
+                        </button>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 px-5 py-4 sm:px-8">
+            <div className="flex items-center gap-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+                <span className="text-amber-700">
+                  {String(activeServiceSlide + 1).padStart(2, "0")}
+                </span>
+                {" / "}
+                {String(servicesList.length).padStart(2, "0")} service capabilities
+              </p>
+
+              {/* Quick-jump indicators */}
+              <div className="hidden items-center gap-1.5 sm:flex">
+                {servicesList.map((item, idx) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    aria-label={`Go to ${item.title}`}
+                    onClick={() => servicesSwiperRef.current?.slideToLoop(idx)}
+                    className={`h-2 rounded-full transition-all ${idx === activeServiceSlide
+                        ? "w-6 bg-amber-500"
+                        : "w-2 bg-slate-300 hover:bg-slate-400"
+                      }`}
+                  />
+                ))}
+              </div>
+            </div>
+
             <div className="flex gap-2">
               <button
                 type="button"
@@ -434,25 +430,35 @@ function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:col-span-7">
-              {SOLAR_BRANDS.map((brand) => (
-                <div
-                  key={brand.name}
-                  className="flex h-24 flex-col items-center justify-center rounded-xl border border-slate-200 bg-stone-50 p-4 text-center"
-                >
-                  {brand.logo ? (
-                    <img
-                      src={brand.logo}
-                      alt={brand.name}
-                      className="max-h-12 w-auto object-contain"
-                    />
-                  ) : (
-                    <span className="text-sm font-extrabold tracking-tight text-slate-900">
-                      {brand.name}
-                    </span>
-                  )}
-                </div>
-              ))}
+            <div
+              className="relative overflow-hidden lg:col-span-7"
+              onMouseEnter={() => tweenRef.current?.pause()}
+              onMouseLeave={() => tweenRef.current?.resume()}
+            >
+              {/* Subtle edge fade masks */}
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-linear-to-r from-white to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-linear-to-l from-white to-transparent" />
+
+              {/* GSAP Track (uses pr-4 instead of gap-4 so xPercent: -50 loops with zero jump) */}
+              <div ref={trackRef} className="flex w-max py-1">
+                {[...SOLAR_BRANDS, ...SOLAR_BRANDS].map((brand, idx) => (
+                  <div key={`${brand.name}-${idx}`} className="pr-4">
+                    <div className="flex h-24 w-44 shrink-0 flex-col items-center justify-center rounded-xl border border-slate-200 bg-stone-50 p-4 text-center">
+                      {brand.logo ? (
+                        <img
+                          src={brand.logo}
+                          alt={brand.name}
+                          className="max-h-12 w-auto object-contain"
+                        />
+                      ) : (
+                        <span className="text-sm font-extrabold tracking-tight text-slate-900">
+                          {brand.name}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -472,7 +478,7 @@ function Home() {
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/45 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-slate-950/90 via-slate-950/45 to-transparent" />
               <div className="relative z-10">
                 <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-sky-200">
                   Associate Partner &amp; Product Supply
