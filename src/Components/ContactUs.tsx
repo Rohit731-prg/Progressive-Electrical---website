@@ -107,10 +107,10 @@ function ContactUs() {
                   <div>
                     <p className="text-xs font-medium uppercase text-slate-400">Email</p>
                     <a
-                      href="mailto:info@progressiveelectrical.in"
+                      href="progressive.electrical90@gmail.com"
                       className="mt-0.5 block text-sm font-medium text-slate-200 hover:text-amber-400"
                     >
-                      info@progressiveelectrical.in
+                      progressive.electrical90@gmail.com
                     </a>
                   </div>
                 </div>
