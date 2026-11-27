@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import PLACEHOLDER_LOGO from "../assets/Progressive-Electrical-Logo.png";
 import { socialLinks } from "../Utils/socialLinks";
 
+const LINKEDIN_URL = "https://www.linkedin.com/in/rohit-singha-55477b308/";
+
 function Footer() {
   const navigation = useNavigate();
 
@@ -48,7 +50,7 @@ function Footer() {
               <img
                 src={PLACEHOLDER_LOGO}
                 alt="M/s. Progressive Electrical"
-                className="h-10 w-auto object-contain rounded-sm"
+                className="h-10 w-auto rounded-sm object-contain"
               />
             </button>
 
@@ -160,7 +162,7 @@ function Footer() {
                   <p className="font-semibold text-amber-300">Email</p>
                   <a
                     href="mailto:progressive.electrical90@gmail.com"
-                    className="block break-all text-xs text-slate-200 hover:text-amber-400"
+                    className="block text-xs break-all text-slate-200 hover:text-amber-400"
                   >
                     progressive.electrical90@gmail.com
                   </a>
@@ -195,12 +197,13 @@ function Footer() {
         <div className="mt-8 rounded-xl border border-slate-800 bg-slate-900/80 px-4 py-3 sm:px-5">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-amber-400">
+              <span className="rounded bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold tracking-wide text-amber-400 uppercase">
                 Associate Partner
               </span>
               <span className="text-sm font-bold text-white">Dipti Oxygen</span>
               <span className="text-xs text-slate-300">
-                — Prop: <strong className="text-slate-100">Dipankar Barai</strong>
+                — Prop:{" "}
+                <strong className="text-slate-100">Dipankar Barai</strong>
               </span>
             </div>
             <span className="text-xs text-slate-400">
@@ -218,10 +221,17 @@ function Footer() {
             Electrical | All Rights Reserved
           </p>
           <p>
-            Designed &amp; Maintained by{" "}
-            <span className="font-semibold text-amber-400">
-              Progressive Web Team
-            </span>
+            Designed &amp; Built by{" "}
+            <button
+              type="button"
+              onClick={() =>
+                window.open(LINKEDIN_URL, "_blank", "noopener,noreferrer")
+              }
+              title="ROHIT SINGHA on LinkedIn"
+              className="font-semibold text-amber-400 underline decoration-amber-400/50 underline-offset-4 transition hover:text-amber-300 hover:decoration-amber-300"
+            >
+              ROHIT SINGHA
+            </button>
           </p>
         </div>
       </div>
