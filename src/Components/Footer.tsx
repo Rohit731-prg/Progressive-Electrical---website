@@ -142,7 +142,7 @@ function Footer() {
                     href="tel:+919874149838"
                     className="block text-slate-200 hover:text-amber-400"
                   >
-                    +91 98741 49838
+                    +91 98741 49838 / +91 98367 21481
                   </a>
                 </div>
 
@@ -154,7 +154,7 @@ function Footer() {
                     href="tel:+919836721481"
                     className="block text-slate-200 hover:text-amber-400"
                   >
-                    +91 98367 21481
+                    +91 98367 21481 / +91 98741 49838
                   </a>
                 </div>
 

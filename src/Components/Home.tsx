@@ -228,6 +228,13 @@ function Home() {
                 >
                   Call: +91 98741 49838
                 </button>
+                <button
+                  type="button"
+                  onClick={() => window.open("tel:+919836721481", "_self")}
+                  className="rounded-lg border border-slate-700 bg-slate-900 px-5 py-3.5 text-sm font-semibold text-white transition hover:border-amber-400 hover:text-amber-400"
+                >
+                  Call: +91 98367 21481
+                </button>
               </div>
 
               {/* Registration & Proprietor Metadata */}

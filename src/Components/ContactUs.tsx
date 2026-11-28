@@ -13,7 +13,8 @@ function ContactUs() {
   const [submitted, setSubmitted] = useState(false);
 
   // Replace with your client's actual phone & WhatsApp number (with country code 91, no +)
-  const BUSINESS_PHONE = "+919874149838";
+  const BUSINESS_PHONE1 = "+919874149838";
+  const BUSINESS_PHONE2 = "++919836721481";
   const WHATSAPP_NUMBER = "919874149838";
 
   const handleChange = (e: any) => {
@@ -69,10 +70,19 @@ function ContactUs() {
                   <div>
                     <p className="text-xs font-medium uppercase text-slate-400">Call Directly</p>
                     <a
-                      href={`tel:${BUSINESS_PHONE}`}
+                      href={`tel:${BUSINESS_PHONE1}`}
                       className="mt-0.5 block text-base font-semibold text-white hover:text-amber-400"
                     >
                       +91 98741 49838
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium uppercase text-slate-400">/ Or Call Directly</p>
+                    <a
+                      href={`tel:${BUSINESS_PHONE2}`}
+                      className="mt-0.5 block text-base font-semibold text-white hover:text-amber-400"
+                    >
+                      +91 98367 21481
                     </a>
                   </div>
                 </div>

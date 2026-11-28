@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Amit from "../assets/Amit.png";
-import Subhonkor from "../assets/Subhonkor.png";
+import Subhonkor from "../assets/Subhonkor.jpg";
 import { offices } from "../Utils/office";
 
 function AboutUs() {

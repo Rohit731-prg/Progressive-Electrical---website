@@ -126,6 +126,35 @@ function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-slate-950 text-white shadow-lg shadow-slate-950/10">
+      {/* Top Direct Call Strip — Visible on ALL screens (Mobile, Tablet & Desktop) */}
+      <div className="border-b border-white/10 bg-slate-900/95">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-1.5 text-[11px] sm:px-6 sm:text-xs lg:px-8">
+          <span className="hidden font-medium text-slate-400 sm:inline">
+            WBSEDCL Licensed Solar &amp; Electrical Contractor
+          </span>
+          <div className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-end">
+            <span className="font-semibold uppercase tracking-wider text-amber-400">
+              24/7 Helpline:
+            </span>
+            <div className="flex items-center divide-x divide-white/20 font-semibold text-slate-100">
+              <a
+                href="tel:+919874149838"
+                className="pr-2.5 transition hover:text-amber-300"
+              >
+                +91 98741 49838
+              </a>
+              <a
+                href="tel:+919836721481"
+                className="pl-2.5 transition hover:text-amber-300"
+              >
+                +91 98367 21481
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation Bar */}
       <nav
         aria-label="Main navigation"
         className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
@@ -149,7 +178,7 @@ function Navbar() {
               Progressive Electrical
             </span>
             <span className="mt-0.5 block text-[9px] font-semibold uppercase tracking-[0.16em] text-amber-300 sm:text-[10px]">
-              Licensed Electrical Contractor
+              <span className="font-bold">Govt.</span> Licensed Electrical Contractor
             </span>
           </span>
         </button>
@@ -175,17 +204,26 @@ function Navbar() {
           })}
         </div>
 
+        {/* Desktop Both Numbers + CTA */}
         <div className="hidden items-center gap-3 lg:flex">
-          <a
-            href="tel:+919874149838"
-            className="rounded-full border border-white/20 px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-amber-300 hover:text-amber-300"
-          >
-            +91 98741 49838
-          </a>
+          <div className="flex items-center divide-x divide-white/20 rounded-full border border-white/20 bg-white/5 px-3.5 py-2 text-xs font-semibold text-slate-100 xl:text-sm">
+            <a
+              href="tel:+919874149838"
+              className="pr-2.5 transition hover:text-amber-300"
+            >
+              +91 98741 49838
+            </a>
+            <a
+              href="tel:+919836721481"
+              className="pl-2.5 transition hover:text-amber-300"
+            >
+              +91 98367 21481
+            </a>
+          </div>
           <button
             type="button"
             onClick={() => handleNavigate("/contact")}
-            className="rounded-full bg-amber-400 px-5 py-2.5 text-sm font-bold text-slate-950 shadow-md shadow-amber-950/20 transition hover:-translate-y-0.5 hover:bg-amber-300"
+            className="shrink-0 rounded-full bg-amber-400 px-5 py-2.5 text-sm font-bold text-slate-950 shadow-md shadow-amber-950/20 transition hover:-translate-y-0.5 hover:bg-amber-300"
           >
             Request a Site Visit
           </button>
@@ -301,6 +339,13 @@ function Navbar() {
                 className="mt-5 flex items-center justify-between rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-white transition hover:border-amber-300 hover:text-amber-300"
               >
                 Call +91 98741 49838
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href="tel:+919836721481"
+                className="mt-2.5 flex items-center justify-between rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-white transition hover:border-amber-300 hover:text-amber-300"
+              >
+                Call +91 98367 21481
                 <span aria-hidden="true">↗</span>
               </a>
               <button
